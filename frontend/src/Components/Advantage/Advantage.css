@@ -1,0 +1,60 @@
+.advantage{
+    width: 100%;
+    height: 38vw;
+    margin: 30px auto;
+    /* background-image: url('../../../public/about.jpg');  */
+    /* background-repeat: no-repeat;  */
+    background-size: cover;
+    /* background-color: gray; */
+    position: relative;
+    border-radius: 0px;
+    padding: 60px;
+}
+.about-coadvantag{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw; /* Changed from 1.5w to 1.5vw for proper unit */
+    max-width: 60%;
+    animation: fadeIn 3s;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.advantage-content h1{
+    width: 60%;
+    color: black;
+    font-weight: 700;
+    font-size: max(3.5vw,22px); 
+    text-transform: capitalize;
+}
+.advantage-content-parts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjusts spacing between columns */
+    gap: 20px; /* Adjust the gap between parts as needed */
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 5% ;
+}
+.advantage-content-parts > div {
+    flex: 1 1 30%; /* Flex basis to make each div take 30% of the container width */
+    text-align: left;
+    min-width: 250px; /* Minimum width to ensure readability */
+}
+
+.advantage-content-parts img {
+    max-width: 20%; /* Adjust the size as needed */
+}
+
+.advantage-content-parts h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+ p {
+    margin: 5px 0;
+    color: black;
+    font-size: 1.2vw;
+}

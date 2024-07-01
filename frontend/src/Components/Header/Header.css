@@ -1,0 +1,125 @@
+.header{
+    width: 100%;
+    height: 34vw;
+    margin: 30px auto;
+    background-image: url('../../../public/header.jpg');
+    background-repeat: no-repeat; 
+    /* background-attachment: fixed; */
+    background-size: cover;
+    position: relative;
+    border-radius: 0px;
+    text-align: center;
+}
+.header-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5w;
+    max-width: 100%;
+    animation :fadeIn 3s;
+    text-align: center;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+.header-content h3{
+    font-weight:700 ;
+    /* color: #F0E219; */
+    color: black;
+    font-size: max(4.5vw,22px);
+    text-align: center;
+    text-transform: capitalize;
+}
+.header-content p{
+    color: black;
+    font-size: 1.5vw;
+    text-align: center;
+}
+.header-content button{
+    border: none;
+    /* color: #747474; */
+    color: white;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: black;
+    font-size: max(1vw,13px);
+    border-radius: 50px;
+    margin-top: 10px;
+    align-items: center;
+}
+@media (max-width:1050px){
+    .header-content{
+        max-width: 45%;
+    }
+}
+@media (max-width:750px){
+    .header-content{
+        max-width: 55%;
+    }
+    .header-content p{
+        display: none;
+    }
+    .header-content button{
+        padding: 2vw 4vw;
+    }
+}
+@media (max-width: 1050px) {
+    .header {
+        height: 40vw; /* Adjust height for smaller screens */
+    }
+
+    .header-content {
+        max-width: 60%;
+    }
+
+    .header-content h3 {
+        font-size: max(4vw, 20px); /* Adjust font size */
+    }
+
+    .header-content p {
+        font-size: 1.3vw; /* Adjust font size */
+    }
+
+    .header-content button {
+        padding: 1.2vw 2.5vw; /* Adjust padding */
+        font-size: max(1.2vw, 12px); /* Adjust font size */
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        height: 50vw; /* Adjust height for smaller screens */
+    }
+
+    .header-content {
+        max-width: 70%;
+    }
+
+    .header-content p {
+        display: none; /* Hide paragraph on small screens */
+    }
+
+    .header-content button {
+        padding: 2vw 4vw; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 60vw; /* Adjust height for very small screens */
+    }
+
+    .header-content {
+        max-width: 80%;
+    }
+
+    .header-content h3 {
+        font-size: max(5vw, 18px); /* Adjust font size */
+    }
+
+    .header-content button {
+        padding: 2.5vw 5vw; /* Adjust padding */
+        font-size: max(1.5vw, 11px); /* Adjust font size */
+    }
+}
