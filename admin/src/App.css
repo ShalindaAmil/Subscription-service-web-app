@@ -12,7 +12,7 @@
   hr{
     border: none;
     height: 1px;
-    background-color: #a9a9a9;
+    background-color:black;
   }
   .app-content{
     display: flex;
