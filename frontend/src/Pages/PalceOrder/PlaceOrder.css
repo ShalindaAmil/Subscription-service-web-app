@@ -33,3 +33,13 @@
 .place-order .cart-total button{
     margin-top: 30px;
 }
+@media (max-width: 768px) {
+    .place-order {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        gap: 30px; /* Reduced gap between items */
+    }
+
+    .place-order-left, .place-order-right {
+        max-width: 100%; /* Full width for both sections on smaller screens */
+    }
+}

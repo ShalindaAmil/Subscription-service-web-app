@@ -1,20 +1,11 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-*{
-    font-family: Outfit;
-} */
 .navbar{
     padding: 20px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-/* .navbar .logo{
-    width: 150px;
-} */
 .navbar .logo{
-  /* color: #FFBF00; */
   color: black;
-  /* font-family: Arial Narrow ; */
   font-weight: 700;
 }
 .navbar-menu{
@@ -126,42 +117,6 @@
 .nav-profile-dropdown :hover{
     background-color:gray;
 }
-/* @media (max-width:1050px){
-    .navbar .logo{
-        width: 140px;
-    }
-    .navbar-menu{
-        gap: 30px;
-        font-size: 17px;
-    }
-    .navbar-right{
-        gap: 30px;
-    }
-    .navbar-right button{
-        padding: 8px 25px;
-    }
-}
-@media (max-width:900px){
-    .navbar .logo{
-        width: 120px;
-    }
-    .navbar-menu{
-        gap: 15px;
-        font-size: 16px;
-    }
-    .navbar-right{
-        gap: 20px;
-    }
-    .navbar-right button{
-        padding: 7px 20px;
-        font-size: 15px;
-    }
-}
-/* @media (max-width:1050px){
-    .navbar-menu{
-        display: nne;
-    }
-} */ 
 @media (max-width: 1050px) {
     .navbar .logo {
         width: 140px;

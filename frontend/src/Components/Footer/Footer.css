@@ -56,3 +56,13 @@
         text-align: center;
     }
 }
+@media (max-width: 750px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Changed to single column layout on smaller screens */
+        gap: 35px;
+    }
+
+    .footer-copyright {
+        text-align: center;
+    }
+}

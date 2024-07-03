@@ -16,3 +16,15 @@
         transform:rotate(360deg);
     }
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .verify {
+        min-height: 40vh; /* Adjusted minimum height for smaller screens */
+    }
+
+    .verify .spinner {
+        width: 80px; /* Reduced spinner size for smaller screens */
+        height: 80px;
+    }
+}

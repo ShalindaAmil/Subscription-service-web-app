@@ -26,3 +26,24 @@
 .app-download-paltforms img:hover{
     transform: scale(1.05);
 }
+@media (max-width: 768px) {
+    .app-download {
+        margin-top: 80px; /* Adjust top margin for smaller screens */
+    }
+
+    .app-download h1 {
+        font-size: 4vw; /* Decrease font size for heading on smaller screens */
+    }
+
+    .app-download-paltforms {
+        flex-direction: column; /* Stack platforms vertically on smaller screens */
+        gap: 20px; /* Increase gap between platforms */
+        margin-top: 30px; /* Adjust margin top for smaller screens */
+    }
+
+    .app-download-paltforms img {
+        width: 100%; /* Full width for images on smaller screens */
+        max-width: none; /* Remove max-width constraint */
+        margin: 0 auto; /* Center align images */
+    }
+}

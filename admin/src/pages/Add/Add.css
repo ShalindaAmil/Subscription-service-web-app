@@ -2,7 +2,7 @@
     width: 100%;
     margin-left: max(5vw,25px);
     margin-top: 50px;
-    color: #6d6d6d;
+    color: black;
     font-size: 16px;
 }
 .add form{
@@ -38,4 +38,23 @@
     background-color: black;
     cursor: pointer;
     color: white;
+}
+@media (max-width: 768px) {
+    .add {
+        margin-left: 10px;
+    }
+
+    .add-product-name, .add-product-description {
+        width: 100%;
+    }
+
+    .add-category-price {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .add-category-price select, .add-category-price input {
+        width: 100%;
+        max-width: none;
+    }
 }

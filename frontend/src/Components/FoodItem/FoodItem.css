@@ -61,4 +61,13 @@
     border-radius:50px ;
     background-color: white;
 }
+@media (max-width: 768px) {
+    .food-item-name-rating p {
+        font-size: 16px; /* Adjusted font size for smaller screens */
+    }
+
+    .food-item-description {
+        font-size: 12px; /* Adjusted font size for smaller screens */
+    }
+}
 

@@ -62,3 +62,22 @@
         padding: 2vw 4vw;
     }
 }
+@media (max-width: 1050px) {
+    .discover-content {
+        max-width: 45%; /* Adjust width for medium screens */
+    }
+}
+
+@media (max-width: 750px) {
+    .discover-content {
+        max-width: 55%; /* Adjust width for smaller screens */
+    }
+
+    .discover-content p {
+        display: none; /* Hide paragraph on smaller screens */
+    }
+
+    .discover-content button {
+        padding: 2vw 4vw; /* Increase button padding for better touch targets */
+    }
+}

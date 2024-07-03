@@ -26,7 +26,14 @@
     gap: 30px;
     row-gap: 50px;
 }
-/* .food-display-list h2{
-    font-size: max(2vw,24px);
-    font-weight: 600;
-} */
+@media (max-width: 768px) {
+    .food-display .menu-title h1 {
+        font-size: 24px; /* Adjusted font size for smaller screens */
+    }
+
+    .food-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusted grid columns for smaller screens */
+        gap: 20px; /* Reduced gap between items for smaller screens */
+        row-gap: 30px; /* Reduced row gap for smaller screens */
+    }
+}

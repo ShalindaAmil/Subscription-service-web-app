@@ -72,9 +72,21 @@
     border: 6px solid #F0E219;
     padding: 3px;
 }
-@media (max-width:1050px){
-    .explore-menu-text{
-        max-width: 100%;
-        font-size: 14px;
+@media (max-width: 1050px) {
+    .explore-menu-text {
+        max-width: 100%; /* Full width for text on smaller screens */
+        font-size: 14px; /* Adjusted font size for smaller screens */
+    }
+
+    .explore-menu-list {
+        gap: 10px; /* Reduced gap between items for smaller screens */
+    }
+
+    .explore-menu-list-item img {
+        width: 25vw; /* Adjusted image width for smaller screens */
+    }
+
+    .explore-menu-list-item p {
+        font-size: 18px; /* Adjusted font size for item text on smaller screens */
     }
 }

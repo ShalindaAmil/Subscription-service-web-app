@@ -1,6 +1,5 @@
 import React from 'react'
 import './Header.css'
-// import {assets} from '../../Assests/assets.js'
 
 const Header = () => {
   return (

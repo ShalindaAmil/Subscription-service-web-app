@@ -58,3 +58,31 @@
     color: black;
     font-size: 1.2vw;
 }
+@media (max-width: 768px) {
+    .advantage {
+        height: auto; /* Adjust height to auto for smaller screens */
+        padding: 30px; /* Decrease padding for smaller screens */
+    }
+
+    .about-coadvantag {
+        max-width: 100%; /* Expand to full width on smaller screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .advantage-content h1 {
+        width: 100%; /* Full width for headings on smaller screens */
+    }
+
+    .advantage-content-parts > div {
+        flex: 1 1 100%; /* Full width for parts on smaller screens */
+        margin-bottom: 20px; /* Increase margin between parts */
+    }
+
+    .advantage-content-parts img {
+        max-width: 100%; /* Full width for images on smaller screens */
+    }
+
+    p {
+        font-size: 1rem; /* Reset font size to a fixed size */
+    }
+}

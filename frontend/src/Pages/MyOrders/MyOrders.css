@@ -37,3 +37,19 @@
     cursor: pointer;
     color:white;
 }
+.container .my-orders-order .date {
+    color: black;
+    display: flex;
+    grid-column: none;
+}
+@media (min-width: 768px) {
+    .my-orders-order {
+        grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr; /* Restore original grid layout */
+        gap: 30px; /* Restore original gap between grid items */
+        padding: 10px 20px;
+    }
+
+    .my-orders-order .bullet {
+        font-size: 25px; /* Original font size for larger screens */
+    }
+}
