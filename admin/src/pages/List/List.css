@@ -31,6 +31,15 @@
 .curser{
     cursor: pointer;
 }
+.delete{
+    max-width:120px ;
+    border: none;
+    padding: 10px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    border-radius: 4px;
+}
 @media (max-width: 600px) {
     .list-table, .topic {
         margin-left: 10px;

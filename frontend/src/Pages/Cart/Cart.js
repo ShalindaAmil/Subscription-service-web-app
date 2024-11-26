@@ -44,6 +44,9 @@ const Cart = () => {
         })}
       </div>
       <div className='cart-bottom'>
+        {/* <div class="side image">
+          <img src={asse}/>
+        </div> */}
         <div className='cart-total'>
           <h2>Cart Total</h2>
           <div>
@@ -53,7 +56,7 @@ const Cart = () => {
             </div>
             <hr/>
             <div className='cart-total-details'>
-              <p>delivery Fee</p>
+              <p>Delivery Fee</p>
               <p>${getTotalCartAmount()===0?0:2}</p>
             </div>
             <hr/>
@@ -63,15 +66,6 @@ const Cart = () => {
             </div>
           </div>
           <button onClick={()=>navigate('/order')}>Proceed to Checkout</button>
-        </div>
-        <div className='cart-promocode'>
-          <div>
-            <p>If you have a promocode, Enter it here</p>
-            <div className='cart-promocode-input'>
-                <input type="text" placeholder='promo code' />
-                <button>Submit</button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

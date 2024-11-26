@@ -25,10 +25,10 @@
 .cart-items-item .cross{
     cursor: pointer;
 }
-.cart-bottom{
+/* .cart-bottom{
     margin-top: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     gap: max(12vw,20px);
     display: flex;
 }
@@ -54,34 +54,43 @@
     padding: 12px 0px;
     border-radius: 4px;
     cursor: pointer;
+} */
+
+.cart-bottom {
+    margin-top: 80px;
+    display: flex;
+    justify-content: flex-start; /* Ensure items align naturally */
+    width:100%; /* Adjust the width of the container */
+   /* Centers the container on the page */
+    
 }
-.cart-promocode{
-    flex: 1;
+
+.cart-total {
+    width: max(20vw, 500px); /* Set a specific width for the cart */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: auto; /* Align the cart container to the right within its parent */
 }
-.cart-promocode p{
-    color: #555;
-}
-.cart-promocode-input{
-    margin-top: 10px;
+
+.cart-total-details {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #eaeaea;
-    border-radius: 4px;
+    color: #555;
 }
-.cart-promocode-input input{
-    background: transparent;
-    border: none;
-    outline: none;
-    padding-left: 10px;
+
+.cart-total hr {
+    margin: 10px 0px;
 }
-.cart-promocode-input button{
-    width: max(10vw, 150px);
-    padding: 12px 5px;
-    background-color: black;
+
+.cart-total button {
     border: none;
     color: white;
+    background-color: black;
+    width: max(15vw, 200px);
+    padding: 12px 0px;
     border-radius: 4px;
+    cursor: pointer;
 }
 @media(max-width:750px){
     .cart-bottom{

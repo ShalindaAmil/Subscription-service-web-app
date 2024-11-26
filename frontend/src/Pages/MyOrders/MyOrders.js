@@ -54,7 +54,7 @@ const MyOrders = () => {
             <p>${order.amount}</p>
             <p>Items: {order.items ? order.items.length : 0}</p> {/* Safely check for items */}
             <p><span className="bullet">&#x25cf;</span><b>{order.status}</b></p>
-            <button>Track Order</button>
+            
             <p className="date" id='subscriptionDate'>Next month's subscription date: {nextSubscriptionDates[order._id]}</p>
           </div>
         ))}

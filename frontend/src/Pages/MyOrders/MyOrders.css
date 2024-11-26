@@ -29,14 +29,6 @@
     font-weight: 500;
     color: #454545;
 }
-.my-orders-order button{
-    border: none;
-    padding: 12px 0px;
-    border-radius: 4px;
-    background-color: black;
-    cursor: pointer;
-    color:white;
-}
 .container .my-orders-order .date {
     color: black;
     display: flex;

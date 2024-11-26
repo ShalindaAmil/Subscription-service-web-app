@@ -1,5 +1,6 @@
 import basket_icon from './basket_icon.png'
 import search_icon from './search_icon.png'
+import side_image from './side_image.jpg'
 import menu_1 from './menu_1.jpg'
 import menu_2 from './menu_2.jpg'
 import menu_3 from './menu_3.jpg'
@@ -47,6 +48,7 @@ import parcel_icon from './parcel_icon.png'
 import free_shiping_icon from './flexible_1.png'
 import selection_icon from './flexible_2.png'
 import flexible_plan_icon from './flexible_3.png'
+import order_image from './order_image.webp'
 
 export const assets = {
     basket_icon,
@@ -68,7 +70,9 @@ export const assets = {
     parcel_icon,
     free_shiping_icon,
     selection_icon,
-    flexible_plan_icon
+    flexible_plan_icon,
+    side_image,
+    order_image
 }
 
 export const menu_list = [

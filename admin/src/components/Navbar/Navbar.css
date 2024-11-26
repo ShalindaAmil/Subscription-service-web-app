@@ -2,29 +2,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 4;
 }
-.navbar .logo{
-    color: black;
-    font-weight: 700;
-  }
-  .navbar .logo p{
+.navbar .logo p{
     color: black;
     font-size: medium;
   }
-.navbar .profile{
-    width:40px;
-}
+
 @media (max-width: 768px) {
   .navbar {
       flex-direction: column;
       align-items: flex-start;
   }
-
-  .navbar .logo {
-      margin-bottom: 8px;
-  }
-
   .navbar .profile {
       width: 30px;
   }
@@ -34,11 +22,6 @@
   .navbar {
       padding: 8px 2px;
   }
-
-  .navbar .logo p {
-      font-size: small;
-  }
-
   .navbar .profile {
       width: 25px;
   }

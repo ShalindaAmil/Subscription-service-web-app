@@ -49,7 +49,7 @@ const List = ({url}) => {
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>${item.price}</p>
-              <p onClick={()=>remmoveFood(item._id)} className='curser'>X</p>
+              <p onClick={()=>remmoveFood(item._id)} className='curser'><button class="delete">Delete</button></p>
             </div>
           )
         })}

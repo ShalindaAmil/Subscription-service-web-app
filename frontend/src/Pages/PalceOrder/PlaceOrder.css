@@ -1,4 +1,4 @@
-.place-order{
+/* .place-order{
     display: flex;
     align-items: start;
     justify-content: space-between;
@@ -29,6 +29,72 @@
 .palce-order-right{
     width: 100%;
     max-width: max(40%,500px);
+}
+.place-order .cart-total button{
+    margin-top: 30px;
+}
+@media (max-width: 768px) {
+    .place-order {
+        flex-direction: column; 
+        gap: 30px;
+    }
+
+    .place-order-left, .place-order-right {
+        max-width: 100%; 
+    }
+}*/
+
+
+
+.place-order{
+    background-image: url('../../../public/side_image.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: relative;
+    justify-content: center; /* Push the divs to opposite sides */
+    align-items: center; /* Align items vertically in the center */
+    margin: 0 auto; /* Center the entire container */
+    padding: 20px;
+   /* Spacing between the image and the content */
+    max-width: 80%; /* Optional: Restrict container width */
+}
+
+.palce-order-left{
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align content at the start */
+    align-items: flex-start; /* Left-align content */
+    width: 50%;
+    max-width: max(50%, 500px); /* Restrict the width */
+    margin-left: auto; /* Push it to the right side */
+    padding: 20px;
+
+}
+.palce-order-left .title{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.palce-order-left input{
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline-color: black;
+}
+.palce-order-left .multi-fields{
+    display: flex;
+    gap: 10px;
+}
+.palce-order-right{
+    display: flex;
+    justify-content: flex-start; /* Align content at the start */
+    align-items: flex-end; /* Left-align content */
+    width: 50%;
+    max-width: max(50%, 500px); /* Restrict the width */
+    margin-left: auto; /* Push it to the right side */
+    padding: 20px; 
 }
 .place-order .cart-total button{
     margin-top: 30px;

@@ -3,6 +3,7 @@ import './PlaceOrder.css';
 import { StoreContext } from '../../Context/StoreContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
+import { assets } from '../../Assests/assets';
 
 const PlaceOrder = () => {
     const { getTotalCartAmount, token, refreshtoken, foodList, cartItems, url } = useContext(StoreContext);
@@ -82,6 +83,9 @@ const PlaceOrder = () => {
   
     return (
         <form onSubmit={placeOrder} className='place-order'>
+            {/* <div className="place-order-image">
+                <img src={assets.order_image} alt="Order Image" />
+            </div> */}
             <div className='palce-order-left'>
                 <p className='title'>Delivery Information</p>
                 <div className='multi-fields'>

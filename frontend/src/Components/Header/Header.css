@@ -17,7 +17,7 @@
     align-items: center;
     gap: 1.5w;
     max-width: 100%;
-    animation :fadeIn 3s;
+    /* animation :fadeIn 3s; */
     text-align: center;
     top: 50%; 
     left: 50%; 
