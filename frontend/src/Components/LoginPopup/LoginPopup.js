@@ -198,7 +198,7 @@ import { StoreContext } from '../../Context/StoreContext';
 import axios from 'axios';
 
 const LoginPopup = ({ setShowLogin }) => {
-  const { url, setToken } = useContext(StoreContext);
+  const { url, setToken,setUsername } = useContext(StoreContext);
 
   const [currentState, setCurrentState] = useState('Login');
   const [data, setData] = useState({
@@ -227,13 +227,22 @@ const LoginPopup = ({ setShowLogin }) => {
           'Content-Type': 'application/json'
         }
       });
+      // if (response.data.success) {
+      //   setToken(response.data.token);
+      //   //setUsername(response.data.user.name);
+      //   localStorage.setItem('token', response.data.token);
+      //   setShowLogin(false);
+      // } else {
+      //   alert(response.data.message);
+      // }
       if (response.data.success) {
         setToken(response.data.token);
+        if (response.data.user && response.data.user.name) {
+            setUsername(response.data.user.name); // Update username only if valid
+        }
         localStorage.setItem('token', response.data.token);
-        setShowLogin(false);
-      } else {
-        alert(response.data.message);
-      }
+        setShowLogin(false); // Close the popup
+    }
     } catch (error) {
       console.error('Error during login/register:', error);
       if (error.response) {

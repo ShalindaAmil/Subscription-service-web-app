@@ -72,6 +72,10 @@
     border: 6px solid #F0E219;
     padding: 3px;
 }
+.explore-menu-list-item  :hover{
+    border: 6px solid #5b350d;
+    padding: 3px;
+}
 @media (max-width: 1050px) {
     .explore-menu-text {
         max-width: 100%; /* Full width for text on smaller screens */

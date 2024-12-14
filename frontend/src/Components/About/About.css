@@ -44,6 +44,9 @@
     margin-top: 10px;
     align-items: center;
 }
+button:hover{
+    background-color: gray;
+}
 @media (max-width: 1050px) {
     .about-content {
         max-width: 45%;

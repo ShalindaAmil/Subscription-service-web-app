@@ -9,6 +9,7 @@ const StoreContextProvider = (props) => {
     const [loading, setLoading] = useState(true);
     const url = "http://localhost:4000";
     const [token, setToken] = useState("");
+    const [username, setUsername] = useState("");
 
     const addToCart=async(itemId)=>{
         if(!cartItems[itemId]){
@@ -21,6 +22,18 @@ const StoreContextProvider = (props) => {
             await axios.post(url+"/api/cart/add",{itemId},{headers:{token}})
         }
     }
+
+    // Update loadUserData function
+    const loadUserData = async (token) => {
+        try {
+            const response = await axios.get(`${url}/api/user/details`, { headers: { token } });
+            console.log("User data fetched:", response.data); // Check the response
+            setUsername(response.data.username); // Set username globally
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+        }
+    };
+    
 
     const removeFromCart=async(itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
@@ -61,7 +74,20 @@ const StoreContextProvider = (props) => {
     const loadCartData=async(token)=>{
         const response=await axios.post(url+"/api/cart/get",{},{headers:{token}});
         setCartItems(response.data.cartData);
+        setUsername(response.data.username); 
     }
+
+    useEffect(() => {
+        if (token) {
+            loadUserData(token); // Fetch user details after token is set
+        }
+    }, [token]);
+    
+    useEffect(() => {
+        console.log("Current token:", token);
+        console.log("Current username:", username);
+    }, [token, username]);
+    
 
     useEffect(() => {
         async function loadData() {
@@ -75,6 +101,7 @@ const StoreContextProvider = (props) => {
         loadData();
     }, []);
 
+
     const contextValue = {
         foodList,
         cartItems,
@@ -86,6 +113,8 @@ const StoreContextProvider = (props) => {
         url,
         token,
         setToken,  
+        username, // Added username to context
+        setUsername,
     };
 
     return (
