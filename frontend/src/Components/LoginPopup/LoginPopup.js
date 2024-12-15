@@ -239,10 +239,12 @@ const LoginPopup = ({ setShowLogin }) => {
         setToken(response.data.token);
         if (response.data.user && response.data.user.name) {
             setUsername(response.data.user.name); // Update username only if valid
+            
         }
         localStorage.setItem('token', response.data.token);
         setShowLogin(false); // Close the popup
     }
+    
     } catch (error) {
       console.error('Error during login/register:', error);
       if (error.response) {

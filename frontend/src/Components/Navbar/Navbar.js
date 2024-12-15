@@ -90,6 +90,7 @@ import { StoreContext } from '../../Context/StoreContext.js';
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
   const { getTotalCartAmount, cartItems={}, token, setToken, username } = useContext(StoreContext);
+  console.log(username);
   const navigate = useNavigate();
   
   const logout = () => {
@@ -126,8 +127,8 @@ const Navbar = ({ setShowLogin }) => {
             </div>
             {!token ? <button onClick={() => setShowLogin(true)}>Sign in</button> :
             <div className='navbar-profile'> 
-                <p>Hello, {username }</p>  
-                <img src={assets.profile_icon} alt=""/>
+                <p><b>Hello, {username}</b></p>  
+                {/* <img src={assets.profile_icon} alt=""/> */}
                 <ul className='nav-profile-dropdown'>
                     <li onClick={()=>navigate('/myorders')}><img src={assets.bag_icon}alt=""/><p>Orders</p></li>
                     <li onClick={logout}><img src={assets.logout_icon} alt=""/><p>Logout</p></li>

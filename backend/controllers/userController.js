@@ -147,28 +147,72 @@ const createToken = (id) => {
 };
 
 // Login user
+// const loginUser = async (req, res) => {
+//     const { email, password } = req.body;
+//     if (!email || !password) {
+//         return res.status(400).json({ success: false, message: "Email and password are required" });
+//     }
+
+//     try {
+//         const user = await userModel.findOne({ email });
+//         if (!user) {
+//             return res.status(404).json({ success: false, message: "User doesn't exist" });
+//         }
+//         const isMatch = await bcrypt.compare(password, user.password);
+//         if (!isMatch) {
+//             return res.status(401).json({ success: false, message: "Invalid credentials" });
+//         }
+//         const token = createToken(user.id);
+//         res.status(200).json({ success: true, token });
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ success: false, message: "Server error" });
+//     }
+// };
+
+
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
+
+    // Validate input
     if (!email || !password) {
         return res.status(400).json({ success: false, message: "Email and password are required" });
     }
 
     try {
+        // Find user by email
         const user = await userModel.findOne({ email });
         if (!user) {
             return res.status(404).json({ success: false, message: "User doesn't exist" });
         }
+
+        // Check if the password matches
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(401).json({ success: false, message: "Invalid credentials" });
         }
+
+        // Create a JWT token
         const token = createToken(user.id);
-        res.status(200).json({ success: true, token });
+
+        // Include additional user details in the response (if needed)
+        const userDetails = {
+            id: user._id,
+            name: user.name,
+            email: user.email
+        };
+
+        // Log the login event (optional)
+        console.log(`User logged in: ${user.name} at ${new Date().toISOString()}`);
+
+        // Send the response
+        res.status(200).json({ success: true, token, user: userDetails });
     } catch (error) {
-        console.error(error);
+        console.error("Login error:", error);
         res.status(500).json({ success: false, message: "Server error" });
     }
 };
+
 
 // Register user
 const registerUser = async (req, res) => {
