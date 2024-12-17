@@ -235,14 +235,33 @@ const LoginPopup = ({ setShowLogin }) => {
       // } else {
       //   alert(response.data.message);
       // }
-      if (response.data.success) {
-        setToken(response.data.token);
-        if (response.data.user && response.data.user.name) {
-            setUsername(response.data.user.name); // Update username only if valid
+
+
+    //   if (response.data.success) {
+    //     setToken(response.data.token);
+    //     if (response.data.user && response.data.user.name) {
+    //         setUsername(response.data.user.name); // Update username only if valid
             
-        }
-        localStorage.setItem('token', response.data.token);
-        setShowLogin(false); // Close the popup
+    //     }
+    //     localStorage.setItem('token', response.data.token);
+    //     setShowLogin(false); // Close the popup
+    // }
+    if (response.data.success) {
+      // UPDATED: Handle switching back to Login after Sign Up
+      if (currentState === 'Sign Up') {
+        alert('Account created successfully! Please log in.'); // Notify the user
+        setCurrentState('Login'); // Switch to Login state
+        setData({ name: '', email: '', password: '' }); // Clear input fields
+        return; // Exit function after switching to Login
+      }
+
+      // Handle login process (unchanged)
+      setToken(response.data.token);
+      if (response.data.user && response.data.user.name) {
+        setUsername(response.data.user.name); // Update username
+      }
+      localStorage.setItem('token', response.data.token);
+      setShowLogin(false); // Close the popup after successful login
     }
     
     } catch (error) {

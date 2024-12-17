@@ -120,10 +120,15 @@ const Navbar = ({ setShowLogin }) => {
             <a href="#footer" onClick={()=>setMenu("contact us")} className={menu==="contact us"?"active":""}>Contact Us</a>
         </ul>
         <div className="navbar-right">
-            <img src={assets.search_icon} alt=""/>
+            {/* <img src={assets.search_icon} alt=""/> */}
             <div className="navbar-search-icon">
                 <Link to='/cart'><img src={assets.basket_icon} alt=""/></Link>
-                <div className={cartItemsCount === 0 ? "" : "dot"}></div>
+                {/* <div className={cartItemsCount === 0 ? " " : "dot"}></div> */}
+                {cartItemsCount > 0 && (
+                  <div className="cart-indicator">
+                  <span className="cart-count">{cartItemsCount}</span>
+                 </div>
+                )}
             </div>
             {!token ? <button onClick={() => setShowLogin(true)}>Sign in</button> :
             <div className='navbar-profile'> 
