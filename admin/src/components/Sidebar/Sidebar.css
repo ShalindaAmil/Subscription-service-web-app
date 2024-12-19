@@ -1,4 +1,4 @@
-.sidebar{
+/* .sidebar{
     width: 18%;
     min-height: 100vh;
     border: 1.5px solid black;
@@ -40,7 +40,7 @@
     border-color:gray;
 }
 /* Responsive styles */
-@media (max-width: 900px) {
+/*@media (max-width: 900px) {
     .sidebar {
         width: 25%;
     }
@@ -52,4 +52,114 @@
     .sidebar-option p {
         display: none;
     }
+} */
+
+/* Sidebar (Navbar) Container */
+.sidebar {
+    width: 100%;
+    height: 60px; /* Adjust the height for horizontal navbar */
+    background-color: #333; /* Dark background for navbar */
+    display: flex;
+    justify-content: space-between; /* Space between logo and options */
+    align-items: center;
+    font-size: max(1vw, 10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #444; /* Bottom border for separation */
+    padding: 0 20px; /* Add padding for spacing */
 }
+
+/* Logo Styling */
+.sidebar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white; /* Light color for the logo */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar .logo p {
+    color: white;
+    font-size: medium;
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Navbar Options (Links) */
+.sidebar-options {
+    display: flex;
+    gap: 30px; /* Space between navbar items */
+    list-style: none;
+    margin: 0;
+}
+
+/* Individual Navbar Option */
+.sidebar-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.sidebar-option:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+/* Icon Styling within Navbar Items */
+.sidebar-option img {
+    width: 20px; /* Smaller icon size */
+    height: auto;
+}
+
+/* Text Styling within Navbar Items */
+.sidebar-option p {
+    margin: 0;
+}
+
+/* Active Navbar Option */
+.sidebar-option.active {
+    background-color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Make navbar stack vertically on smaller screens */
+    .sidebar {
+        height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px 10px;
+    }
+
+    .sidebar .logo {
+        margin-bottom: 20px; /* Add space below the logo on small screens */
+    }
+
+    .sidebar-options {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+
+    .sidebar-option {
+        width: 100%; /* Make each item take full width */
+        padding: 10px 20px;
+        justify-content: flex-start;
+    }
+
+    .sidebar-option p {
+        margin-left: 10px;
+    }
+}
+

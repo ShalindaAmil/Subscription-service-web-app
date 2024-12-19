@@ -74,54 +74,76 @@
     width: 40px;
     height: 40px;
 }
-.navbar-profile{
-    position: relative;
-}
-.nav-profile-dropdown{
-    position: absolute;
-    display: none;
-    right: 0;
-    z-index: 1; 
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    background-color: white;
-}
-.navbar-profile:hover .nav-profile-dropdown{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 12px 25px;
-    border-color: black;
-    border-width: 2px;
-    border-radius: 4px;
-    outline: 2px solid black;
-    list-style: none;
-}
-.nav-profile-dropdown li{
-    cursor: pointer;
-    background: white;
-    background-color: rgb(240, 238, 238);
-    display: block;
-    float: left;
-    padding: 1rem;
-    position: relative;
-    text-decoration: none;
-    transition-duration: 0.5s;
+.navbar-profile {
     display: flex;
     align-items: center;
-    border-color: black;
-    border-radius: 4px;
+    gap: 10px; /* Reduced spacing between elements */
+    font-size: 14px;
+    color: #333;
 }
-.nav-profile-dropdown img{
-    width: 20px;
-    height: 20px;
-}
-.nav-profile-dropdown :hover{
-    background-color:gray;
-    border-radius: 4px;
 
+.navbar-profile p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
 }
+
+/* Add a vertical separator */
+.navbar-profile p::after {
+    content: '|'; /* Vertical line as separator */
+    color: #ccc;  /* Light gray color */
+    margin-left: 8px; /* Reduced space */
+    margin-right: 8px; /* Reduced space */
+    font-weight: normal;
+}
+
+/* Remove separator after the last text */
+.navbar-profile p:last-child::after {
+    content: '';
+}
+
+/* Style for links */
+.navbar-profile a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 5px 10px; /* Adjusted padding for compact look */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+/* Updated Logout button background */
+.navbar-profile a:nth-child(3) { /* Target Logout link */
+    background-color: red; /* Vibrant red color */
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Hover effects */
+.navbar-profile a:hover {
+    background-color: #f0f0f0; /* Light background for hover */
+    color: #333;
+}
+
+.navbar-profile a:nth-child(3):hover { /* Hover effect for Logout */
+    background-color: red; /* Slightly darker shade of red */
+    color: white;
+}
+
+/* Optional: Spacing between 'Hello, {username}' and the separator */
+.navbar-profile p {
+    margin-right: 5px; /* Minimal spacing before separator */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
 
 /* Position the cart indicator */
 .cart-indicator {

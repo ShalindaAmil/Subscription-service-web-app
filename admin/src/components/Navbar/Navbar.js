@@ -5,7 +5,7 @@ import {assets} from '../../assets/assets'
 const Navbar = () => {
   return (
     <div className='navbar'>
-      <h1 className='logo'>ChocoBox<br/><p>Admin Pannel</p></h1>
+      {/* <h1 className='logo'>ChocoBox<br/><p>Admin Pannel</p></h1> */}
     </div>
   )
 }

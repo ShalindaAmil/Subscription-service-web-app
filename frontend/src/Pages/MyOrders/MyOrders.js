@@ -30,6 +30,25 @@ const MyOrders = () => {
     }
   };
 
+    // Cancel a subscription
+  
+    const cancelSubscription = async (orderId) => {
+      try {
+        await axios.post(
+          `${url}/api/order/cancel`,
+          { orderId },
+          { headers: { token } }
+        );
+        alert("Subscription cancelled successfully!");
+  
+        // Remove the canceled order from the local state
+        setData((prevData) => prevData.filter((order) => order._id !== orderId));
+      } catch (error) {
+        console.error("Error cancelling subscription:", error);
+        alert("Failed to cancel subscription. Please try again.");
+      }
+    };
+
   useEffect(() => {
     if (token) {
       fetchOrders();
@@ -54,7 +73,12 @@ const MyOrders = () => {
             <p>${order.amount}</p>
             <p>Items: {order.items ? order.items.length : 0}</p> {/* Safely check for items */}
             <p><span className="bullet">&#x25cf;</span><b>{order.status}</b></p>
-            
+            <button 
+              className="cancel-subscription-button" 
+              onClick={() => cancelSubscription(order._id)}
+            >
+              Cancel Subscription
+            </button>
             <p className="date" id='subscriptionDate'>Next month's subscription date: {nextSubscriptionDates[order._id]}</p>
           </div>
         ))}

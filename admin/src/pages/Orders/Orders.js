@@ -31,14 +31,19 @@ const statusHandler=async(event,orderId)=>{
       await fetchAllOrders();
   }
 }
+useEffect(() => {
+  fetchAllOrders();
+  const interval = setInterval(fetchAllOrders, 5000); // Refresh every 5 seconds
+  return () => clearInterval(interval);
+}, []);
 
   useEffect(() => {
     fetchAllOrders();
   }, []);
 
   // Filter orders where payment is true
-  const filteredOrders = orders.filter(order => order.payment === true);
-
+  // const filteredOrders = orders.filter(order => order.payment === true);
+  const filteredOrders = orders.filter(order => order.payment === true && order.status !== "Canceled");
   return (
     <div className='order-add'>
       <h3>Order Page</h3>
@@ -68,6 +73,7 @@ const statusHandler=async(event,orderId)=>{
               <option value="Food Processing">Food Processing</option>
               <option value="Out for delivery">Out for delivery</option>
               <option value="Delivered">Delivered</option>
+              <option value="Canceled">Canceled</option>
             </select>
           </div>
         ))}

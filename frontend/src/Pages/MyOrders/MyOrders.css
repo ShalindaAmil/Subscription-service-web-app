@@ -34,6 +34,29 @@
     display: flex;
     grid-column: none;
 }
+
+.cancel-subscription-button {
+    background-color: #e63946; /* Vibrant red */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cancel-subscription-button:hover {
+    background-color: #d62839; /* Darker red for hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  .cancel-subscription-button:active {
+    transform: scale(1); /* Reset zoom on click */
+    background-color: #b71c1c; /* Even darker red */
+  }
+  
 @media (min-width: 768px) {
     .my-orders-order {
         grid-template-columns: 0.5fr 2fr 1fr 1fr 2fr 1fr; /* Restore original grid layout */
